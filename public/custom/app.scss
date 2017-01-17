@@ -1,0 +1,235 @@
+// variables
+$theme__color: #D5E2FF !default;
+$font__color: #000 !default;
+$default__padding: 20 !default;
+$default__margin: 0px 0px 20px !default;
+$font__family: 'Roboto', sans-serif;
+$footer__background: #021423;
+$link__color: #4266B2 !default;
+$line__height: 40px !default;
+
+// mixins
+@mixin padding($padding: $default__padding) {
+	padding: $padding;
+}
+
+@mixin margin($margin: $default__margin) {
+	margin: $margin;
+}
+
+@mixin background($background__color: transparent, $background__attachment: fixed, $background__position: center, $background__repeat: no-repeat, $background__size: cover) {
+	background-color: $background__color;
+	background-attachment: $background__attachment;
+    background-position: $background__position;
+    background-repeat: $background__repeat;
+    background-size: $background__size;
+}
+
+@mixin font($font_transform: none, $font__color: $font__color, $font__weight: normal, $line__height: 100%, $font__size: 100%) {
+	text-transform: $font_transform;
+	color: $font__color;
+	font-weight: $font__weight;
+	line-height: $line__height;
+	font-size: $font__size;
+}
+
+@mixin vertical_align($display: flex, $align__items: center, $justify__content: center) {
+	display: $display;
+  	align-items: $align__items;
+  	justify-content: $justify__content;
+}
+
+// main css
+* {
+	font-family: $font__family;
+	line-height: 200%;
+	font-weight: 400;
+}
+
+a:hover {
+	color: $link__color !important;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.page__header {
+	@include padding(20px 0px);
+	background: $theme__color;
+}
+
+.page__banner {
+	.container {
+		.background__container {
+			@include background($background__position: center -100px);
+			@include vertical_align;
+			min-height: 250px;
+			h1 {
+				@include font(none, #FFF, bold, 100%, $line__height);
+				@include margin(0px);
+			}
+		}
+		overflow: hidden;
+	}
+}
+
+.main__nav {
+	a {
+		@include margin(0px 30px);
+		@include font(uppercase, $font__color, bold, $line__height);
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+}
+
+.main__content {
+	@include margin(0px 0px 60px);
+	h2 {
+		@include font(uppercase, $font__color, 500, 100%, 30px);
+	}
+}
+
+.sub__content {
+	h3 {
+		@include margin(30px 0px 5px);
+		@include font(none, $font__color, 800, 100%, 16px);
+	}
+	.sub__content__block {
+		@include margin(0px 0px 30px);
+		img {
+			display: inline-block;
+		}
+	}
+}
+
+.side__column {
+	aside {
+		background: $theme__color;
+		nav {
+			@include padding(10px 0px 0px);
+			a {
+				@include font(uppercase, $font__color, bold, $line__height);
+				@include padding(0px 0px 0px 10px);
+				transition: color, font-style 2s;
+				transition: padding 0.3s;
+				display: block;
+				&:hover {
+					@include padding(0px 0px 0px 20px);
+					font-style: italic;
+					background: $link__color;
+					color: #FFF !important;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	background: $footer__background;
+	@include font(normal, $theme__color, normal, $line__height);
+	.footer__nav {
+		a {
+			display: block;
+			@include font(uppercase, $theme__color, normal, $line__height);
+		}
+	}
+	.footer_widget {
+		@include padding(20px 15px);
+		h4 {
+			font-size: 20px;
+		}
+		address {
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.copyright {
+	background: $theme__color;
+	p {
+		@include margin(0px);
+	}
+}
+
+a#main__menu__button {
+	@include font(uppercase, $font__color, bold, $line__height);
+}
+
+.main__nav__slide {
+	@extend .main__nav;
+	background: $theme__color;
+	width: 250px;
+	position: fixed;
+	z-index: 999;
+	height: 100vh;
+	left: -300px;
+	transition: left 0.3s;
+	a {
+		display: block;
+	}
+	&.main__nav__slide__show {
+		left: 0px;
+	}
+}
+
+// media queries
+@media only screen and (max-width : 992px) {
+	.main__nav {
+		a {
+			@include margin(0px 10px);
+		}
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	.page__banner {
+		.container {
+			padding: 0px;
+			.background__container {
+				@include background($background__position: top center, $background__size: contain);
+				min-height: 100px;
+				h1 {
+					@include margin(20px 0px 20px);
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
+	.side__column {
+		padding: 0px;
+	}
+
+	.sub__content {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.sub__content {
+		text-align: left;
+	}
+
+	.sub__content__block {
+		img {
+			width: 100%;
+		}
+	}
+
+	footer {
+		.footer__nav {
+			text-align: center;
+			a {
+				@include padding(0px 5px);
+				display: inline-block;
+			}
+		}
+
+		.footer_widget {
+			border-bottom: 1px solid #CCC;
+		}
+	}
+}

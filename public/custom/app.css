@@ -1,0 +1,169 @@
+* {
+  font-family: "Roboto", sans-serif;
+  line-height: 200%;
+  font-weight: 400; }
+
+a:hover {
+  color: #4266B2 !important; }
+  a:hover:hover {
+    text-decoration: none; }
+
+.page__header {
+  padding: 20px 0px;
+  background: #D5E2FF; }
+
+.page__banner .container {
+  overflow: hidden; }
+  .page__banner .container .background__container {
+    background-color: transparent;
+    background-attachment: fixed;
+    background-position: center -100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; }
+    .page__banner .container .background__container h1 {
+      text-transform: none;
+      color: #FFF;
+      font-weight: bold;
+      line-height: 100%;
+      font-size: 40px;
+      margin: 0px; }
+
+.main__nav a, .main__nav__slide a {
+  margin: 0px 30px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 100%; }
+  .main__nav a:last-child, .main__nav__slide a:last-child {
+    margin-right: 0px; }
+
+.main__content {
+  margin: 0px 0px 60px; }
+  .main__content h2 {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 500;
+    line-height: 100%;
+    font-size: 30px; }
+
+.sub__content h3 {
+  margin: 30px 0px 5px;
+  text-transform: none;
+  color: #000;
+  font-weight: 800;
+  line-height: 100%;
+  font-size: 16px; }
+.sub__content .sub__content__block {
+  margin: 0px 0px 30px; }
+  .sub__content .sub__content__block img {
+    display: inline-block; }
+
+.side__column aside {
+  background: #D5E2FF; }
+  .side__column aside nav {
+    padding: 10px 0px 0px; }
+    .side__column aside nav a {
+      text-transform: uppercase;
+      color: #000;
+      font-weight: bold;
+      line-height: 40px;
+      font-size: 100%;
+      padding: 0px 0px 0px 10px;
+      transition: color, font-style 2s;
+      transition: padding 0.3s;
+      display: block; }
+      .side__column aside nav a:hover {
+        padding: 0px 0px 0px 20px;
+        font-style: italic;
+        background: #4266B2;
+        color: #FFF !important; }
+
+footer {
+  background: #021423;
+  text-transform: normal;
+  color: #D5E2FF;
+  font-weight: normal;
+  line-height: 40px;
+  font-size: 100%; }
+  footer .footer__nav a {
+    display: block;
+    text-transform: uppercase;
+    color: #D5E2FF;
+    font-weight: normal;
+    line-height: 40px;
+    font-size: 100%; }
+  footer .footer_widget {
+    padding: 20px 15px; }
+    footer .footer_widget h4 {
+      font-size: 20px; }
+    footer .footer_widget address span {
+      font-weight: bold; }
+
+.copyright {
+  background: #D5E2FF; }
+  .copyright p {
+    margin: 0px; }
+
+a#main__menu__button {
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 100%; }
+
+.main__nav__slide {
+  background: #D5E2FF;
+  width: 250px;
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  left: -300px;
+  transition: left 0.3s; }
+  .main__nav__slide a {
+    display: block; }
+  .main__nav__slide.main__nav__slide__show {
+    left: 0px; }
+
+@media only screen and (max-width: 992px) {
+  .main__nav a, .main__nav__slide a {
+    margin: 0px 10px; } }
+@media only screen and (max-width: 768px) {
+  .page__banner .container {
+    padding: 0px; }
+    .page__banner .container .background__container {
+      background-color: transparent;
+      background-attachment: fixed;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      min-height: 100px; }
+      .page__banner .container .background__container h1 {
+        margin: 20px 0px 20px;
+        font-size: 20px; }
+
+  .side__column {
+    padding: 0px; }
+
+  .sub__content {
+    text-align: center; } }
+@media only screen and (max-width: 480px) {
+  .sub__content {
+    text-align: left; }
+
+  .sub__content__block img {
+    width: 100%; }
+
+  footer .footer__nav {
+    text-align: center; }
+    footer .footer__nav a {
+      padding: 0px 5px;
+      display: inline-block; }
+  footer .footer_widget {
+    border-bottom: 1px solid #CCC; } }
+
+/*# sourceMappingURL=app.css.map */
